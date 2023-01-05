@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    display: flex;
+    justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+    background: #D9D9D9;
+    border-radius: 10px;
+    padding: 12px 26px;
+    font-family: 'Happy Monkey', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #780000;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.user-name {
+    background: #D9D9D9;
+    border-radius: 10px;
+    padding: 12px 26px;
+    font-family: 'Happy Monkey', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    color: #780000;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.App-link {
-  color: #61dafb;
+.form {
+    background: #CCF1FD;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input {
+    width: 100%;
+    margin: 30px;
+    padding: 10px 35px;
 }

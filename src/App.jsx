@@ -1,11 +1,10 @@
 import './App.css';
+import { Header } from './Header';
 
-function App() {
+export default function App() {
     return (
-        <div className="App">
-
+        <div>
+            <Header />
         </div>
     );
 }
-
-export default App;
