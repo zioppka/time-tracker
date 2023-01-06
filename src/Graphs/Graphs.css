@@ -15,7 +15,7 @@
 
 .PieChart {
     width: 400px;
-    margin: 45px auto;
+    margin: 45px auto 0 auto;
     font-family: 'Comfortaa', cursive;
     font-style: normal;
     font-weight: 400;
