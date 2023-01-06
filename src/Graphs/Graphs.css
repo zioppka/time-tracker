@@ -1,23 +1,31 @@
 .graphs {
     background: #528478;
-    padding-top: 35px;
+    padding: 50px 0;
 }
 
 .graphs h1 {
     font-family: 'Comfortaa', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 30px;
     line-height: 28px;
     color: #EBFF00;
-    margin: 0;
+    margin: 0 0 30px;
+}
+.graphs p {
+    font-size: 20px;
+    color: #FFFFFF;
 }
 
 .PieChart {
-    width: 400px;
-    margin: 45px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Comfortaa', cursive;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
+}
+.PieChart div {
+    margin: 20px 0 40px;
 }
