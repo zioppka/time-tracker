@@ -1,0 +1,23 @@
+.graphs {
+    background: #528478;
+    padding-top: 35px;
+}
+
+.graphs h1 {
+    font-family: 'Comfortaa', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 28px;
+    color: #EBFF00;
+    margin: 0;
+}
+
+.PieChart {
+    width: 400px;
+    margin: 45px auto;
+    font-family: 'Comfortaa', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+}

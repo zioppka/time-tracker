@@ -1,0 +1,42 @@
+.time-input {
+    background: #528478;
+    border-radius: 10px;
+    width: 85%;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: 'Happy Monkey', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.2em;
+    color: #EBFF00;
+    padding: 12px 32px;
+    border: none;
+}
+
+.time-input::placeholder {
+    color: #EBFF00;
+}
+
+.time-form {
+    background: #CCF1FD;
+    display: flex;
+    flex-direction: column;
+}
+
+.time-btn {
+    background: #528478;
+    border-radius: 10px;
+    margin: 30px;
+    font-family: 'Happy Monkey', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.2em;
+    color: #EBFF00;
+    padding: 12px 32px;
+    border: none;
+}
