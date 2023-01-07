@@ -2,7 +2,6 @@ import './TimeForm.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBusiness } from '../Redux/TimeTrackerSlice';
-import { store } from '../Redux/Store';
 
 export function TimeForm() {
     const [business, setBusiness] = useState('');
@@ -21,7 +20,6 @@ export function TimeForm() {
                 time: time,
             })
         );
-        console.log(store.getState());
     }
 
     return (

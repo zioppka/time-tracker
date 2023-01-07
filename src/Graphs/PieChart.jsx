@@ -1,13 +1,16 @@
 import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
+import { useSelector } from 'react-redux';
 
 export function GraphPieChart() {
     const data = [
-        { name: 'sleep', value: 33 },
-        { name: 'work', value: 33 },
-        { name: 'train', value: 17 },
-        { name: 'other', value: 17 },
+        { name: 'sleep', value: 8 },
+        { name: 'work', value: 8 },
+        { name: 'train', value: 3 },
+        { name: 'other', value: 2 },
     ];
+    const appData = useSelector((state) => state.timeTracker);
+    console.log(appData);
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
     const RADIAN = Math.PI / 180;
     const renderCustomizedLabel = ({
