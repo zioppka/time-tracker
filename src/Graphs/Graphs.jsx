@@ -1,5 +1,4 @@
 import './Graphs.css';
-import { GraphAreaChart } from './AreaChart';
 import { GraphPieChart } from './PieChart';
 import { VerticalChart } from './VerticalChart';
 

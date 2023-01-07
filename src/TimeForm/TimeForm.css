@@ -11,13 +11,36 @@
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.2em;
-    color: #EBFF00;
+    color: black;
     padding: 12px 32px;
     border: none;
+    transition: all .2s;
+    box-shadow: 0 2px 3px gray;
 }
 
 .time-input::placeholder {
-    color: #EBFF00;
+    color: #ffffff;
+}
+
+.time-input:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+.time-input:active {
+    border: none;
+    outline: none;
+    background-color: white;
+    box-shadow: 0 5px 10px gray;
+    transform: translateY(4px);
+}
+
+.time-input:active::placeholder {
+    color: black;
+}
+
+.time-input:hover::placeholder {
+    color: black;
 }
 
 .time-form {
@@ -29,14 +52,28 @@
 .time-btn {
     background: #528478;
     border-radius: 10px;
+    border: none;
     margin: 30px;
-    font-family: 'Happy Monkey', cursive;
+    font-family: 'Comfortaa', cursive;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.2em;
-    color: #EBFF00;
-    padding: 12px 32px;
-    border: none;
+    color: #ffffff;
+    padding: 10px 40px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 3px gray;
+}
+
+.time-btn:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.time-btn:active {
+    background-color: #528478;
+    box-shadow: 0 5px 10px gray;
+    transform: translateY(4px);
 }
