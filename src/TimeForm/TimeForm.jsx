@@ -28,19 +28,19 @@ export function TimeForm() {
                 <input
                     type="text"
                     className="time-input"
-                    placeholder={'business'}
+                    placeholder={'Business'}
                     onChange={(e) => setBusiness(e.target.value)}
                 />
                 <input
                     type="text"
                     className="time-input"
-                    placeholder={'category'}
+                    placeholder={'Category'}
                     onChange={(e) => setCategory(e.target.value)}
                 />
                 <input
                     type="text"
                     className="time-input"
-                    placeholder={'how many hours did it take'}
+                    placeholder={'How many time did it take'}
                     onChange={(e) => setTime(e.target.value)}
                 />
                 <button className="time-btn">Send</button>

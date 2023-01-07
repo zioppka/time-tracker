@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
 
+* {
+    border: none;
+    outline: none;
+}
+
 body {
     padding: 0;
     margin: 0;
