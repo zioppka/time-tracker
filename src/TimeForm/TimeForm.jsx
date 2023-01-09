@@ -16,6 +16,7 @@ export function TimeForm() {
     appData.forEach((item) => {
         totalHoursToday += +item.time;
     });
+    console.log(totalHoursToday);
 
     function newBusiness(e) {
         e.preventDefault();
