@@ -1,6 +1,6 @@
 import './TimeForm.css';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addBusiness } from '../Redux/TimeTrackerSlice';
 import { createBusiness } from '../network/network';
 
@@ -9,15 +9,28 @@ export function TimeForm() {
     const [category, setCategory] = useState('');
     const [time, setTime] = useState(0);
     const [warningMessage, setWarningMessage] = useState('');
+    const appData = useSelector((state) => state.timeTracker);
     const dispatch = useDispatch();
+
+    let totalHoursToday = 0;
+    appData.forEach((item) => {
+        totalHoursToday += +item.time;
+    });
 
     function newBusiness(e) {
         e.preventDefault();
+        if (24 - totalHoursToday === 0) {
+            setWarningMessage(`You don't have 24+ h in day`);
+            return;
+        }
 
-        if (business === '' || time === '' || category === '') {
+        if (business === '' || time === 0 || category === '') {
             setWarningMessage('Enter fields');
             return;
         }
+
+        console.log(totalHoursToday);
+
         const data = {
             name: business,
             category: category,
@@ -60,7 +73,7 @@ export function TimeForm() {
                     <input
                         type={'range'}
                         min={'0'}
-                        max={'24'}
+                        max={24 - totalHoursToday}
                         step={'0.5'}
                         id={'sendForm'}
                         className={'slider'}
@@ -68,7 +81,11 @@ export function TimeForm() {
                         onChange={(e) => setTime(e.target.value)}
                         value={time}
                     />
-                    <div className="range-value">{time}</div>
+                    <div className={'values'}>
+                        <div className="range-value range-value-start">{0}</div>
+                        <div className="range-value">{time}</div>
+                        <div className="range-value range-value-end">{24 - totalHoursToday}</div>
+                    </div>
                 </div>
                 <p className={'warning'}>{warningMessage}</p>
                 <button className="time-btn">Send</button>

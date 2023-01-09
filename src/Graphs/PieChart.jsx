@@ -3,7 +3,6 @@ import { PieChart, Pie, Cell } from 'recharts';
 import { useSelector } from 'react-redux';
 
 const RADIAN = Math.PI / 180;
-
 const COLORS = [
     '#1abc9c',
     '#3498db',
@@ -60,8 +59,6 @@ export function GraphPieChart() {
             });
         }
     });
-    console.log(appData);
-    console.log(data);
 
     return (
         <PieChart width={550} height={400}>
