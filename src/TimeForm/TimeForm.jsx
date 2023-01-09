@@ -16,19 +16,20 @@ export function TimeForm() {
     appData.forEach((item) => {
         totalHoursToday += +item.time;
     });
-    console.log(totalHoursToday);
 
     function newBusiness(e) {
         e.preventDefault();
+        if (24 - totalHoursToday === 0) {
+            setWarningMessage(`You don't have 24+ h in day`);
+            return;
+        }
 
-        if (business === '' || time === '' || category === '') {
+        if (business === '' || time === 0 || category === '') {
             setWarningMessage('Enter fields');
             return;
         }
+
         console.log(totalHoursToday);
-        if (totalHoursToday >= 24 || time + totalHoursToday > 24) {
-            return alert('Are you a dork? There are only 24 hours in a day!!!');
-        }
 
         const data = {
             name: business,
@@ -72,7 +73,7 @@ export function TimeForm() {
                     <input
                         type={'range'}
                         min={'0'}
-                        max={'24'}
+                        max={24 - totalHoursToday}
                         step={'0.5'}
                         id={'sendForm'}
                         className={'slider'}
@@ -80,7 +81,11 @@ export function TimeForm() {
                         onChange={(e) => setTime(e.target.value)}
                         value={time}
                     />
-                    <div className="range-value">{time}</div>
+                    <div className={'values'}>
+                        <div className="range-value range-value-start">{0}</div>
+                        <div className="range-value">{time}</div>
+                        <div className="range-value range-value-end">{24 - totalHoursToday}</div>
+                    </div>
                 </div>
                 <p className={'warning'}>{warningMessage}</p>
                 <button className="time-btn">Send</button>
