@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
-import { useDispatch, useSelector } from 'react-redux';
-import { getBusinessToday } from '../network/network';
-import { addBusiness } from '../Redux/TimeTrackerSlice';
+import { useSelector } from 'react-redux';
 
 const RADIAN = Math.PI / 180;
-
 const COLORS = [
     '#1abc9c',
     '#3498db',
@@ -52,7 +49,6 @@ const renderCustomizedLabel = ({
 };
 
 export function GraphPieChart() {
-    const dispatch = useDispatch();
     const appData = useSelector((state) => state.timeTracker);
 
     const data = appData.map((item) => {
@@ -63,8 +59,6 @@ export function GraphPieChart() {
             };
         }
     });
-    console.log(appData);
-    console.log(data);
 
     return (
         <PieChart width={550} height={400}>

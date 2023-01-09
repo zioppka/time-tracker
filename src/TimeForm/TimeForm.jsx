@@ -1,6 +1,6 @@
 import './TimeForm.css';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addBusiness } from '../Redux/TimeTrackerSlice';
 import { createBusiness } from '../network/network';
 
@@ -9,7 +9,13 @@ export function TimeForm() {
     const [category, setCategory] = useState('');
     const [time, setTime] = useState('');
     const [warningMessage, setWarningMessage] = useState('');
+    const appData = useSelector((state) => state.timeTracker);
     const dispatch = useDispatch();
+
+    let totalHoursToday = 0;
+    appData.forEach((item) => {
+        totalHoursToday += +item.time;
+    });
 
     function newBusiness(e) {
         e.preventDefault();
@@ -18,6 +24,11 @@ export function TimeForm() {
             setWarningMessage('Enter fields');
             return;
         }
+        console.log(totalHoursToday);
+        if (totalHoursToday >= 24 || time + totalHoursToday > 24) {
+            return alert('Are you a dork? There are only 24 hours in a day!!!');
+        }
+
         const data = {
             name: business,
             category: category,
