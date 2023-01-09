@@ -7,7 +7,7 @@ import { createBusiness } from '../network/network';
 export function TimeForm() {
     const [business, setBusiness] = useState('');
     const [category, setCategory] = useState('');
-    const [time, setTime] = useState('');
+    const [time, setTime] = useState(0);
     const [warningMessage, setWarningMessage] = useState('');
     const appData = useSelector((state) => state.timeTracker);
     const dispatch = useDispatch();
@@ -42,7 +42,7 @@ export function TimeForm() {
         setWarningMessage('');
         setBusiness('');
         setCategory('');
-        setTime('');
+        setTime(0);
     }
 
     return (
@@ -52,6 +52,7 @@ export function TimeForm() {
                     type="text"
                     className="time-input"
                     placeholder={'Business'}
+                    tabIndex={1}
                     onChange={(e) => setBusiness(e.target.value)}
                     value={business}
                 />
@@ -59,17 +60,28 @@ export function TimeForm() {
                     type="text"
                     className="time-input"
                     placeholder={'Category'}
+                    tabIndex={2}
                     onChange={(e) => setCategory(e.target.value)}
                     value={category}
                 />
-                <input
-                    type="text"
-                    className="time-input"
-                    placeholder={'How many time did it take'}
-                    onChange={(e) => setTime(e.target.value)}
-                    value={time}
-                />
-                <p>{warningMessage}</p>
+                <div className="time-range-input">
+                    <label htmlFor={'sendForm'} className={'send-form'}>
+                        How many time did it take
+                    </label>
+                    <input
+                        type={'range'}
+                        min={'0'}
+                        max={'24'}
+                        step={'0.5'}
+                        id={'sendForm'}
+                        className={'slider'}
+                        tabIndex={3}
+                        onChange={(e) => setTime(e.target.value)}
+                        value={time}
+                    />
+                    <div className="range-value">{time}</div>
+                </div>
+                <p className={'warning'}>{warningMessage}</p>
                 <button className="time-btn">Send</button>
             </div>
         </form>

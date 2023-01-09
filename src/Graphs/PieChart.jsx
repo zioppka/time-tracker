@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 import { useSelector } from 'react-redux';
 
@@ -50,13 +50,13 @@ const renderCustomizedLabel = ({
 
 export function GraphPieChart() {
     const appData = useSelector((state) => state.timeTracker);
-
-    const data = appData.map((item) => {
+    const data = [];
+    appData.forEach((item) => {
         if (new Date(item.date).getDate() === new Date().getDate()) {
-            return {
+            data.push({
                 name: item.name,
                 value: +item.time,
-            };
+            });
         }
     });
 

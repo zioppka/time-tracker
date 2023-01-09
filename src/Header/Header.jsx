@@ -1,7 +1,7 @@
 import './Header.css';
 
 export function Header() {
-    const userName = 'Marat';
+    const userName = 'Name';
     return (
         <div className={'container'}>
             <div className={'header'}>
