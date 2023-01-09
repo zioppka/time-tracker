@@ -38,7 +38,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "recharts": "^2.2.0"
   }
 }

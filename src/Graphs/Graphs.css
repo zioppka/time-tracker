@@ -9,12 +9,12 @@
     font-weight: 400;
     font-size: 30px;
     line-height: 28px;
-    color: #EBFF00;
+    color: #ebff00;
     margin: 0 0 30px;
 }
 .graphs p {
     font-size: 20px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .PieChart {
@@ -28,4 +28,9 @@
 }
 .PieChart div {
     margin: 20px 0 40px;
+}
+
+.customized-label {
+    display: flex;
+    flex-direction: column;
 }

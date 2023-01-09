@@ -4,6 +4,7 @@ import { Advice } from './Advice/Advice';
 import { Copyright } from './Copyright/Copyright';
 import { TimeForm } from './TimeForm/TimeForm';
 import { Graphs } from './Graphs/Graphs';
+import '../src/network/instalation';
 
 export default function App() {
     return (

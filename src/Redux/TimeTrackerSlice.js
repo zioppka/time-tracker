@@ -11,6 +11,7 @@ const TimeTrackerSlice = createSlice({
                     name: action.payload.name,
                     category: action.payload.category,
                     time: action.payload.time,
+                    date: action.payload.date,
                 },
             ];
         },
