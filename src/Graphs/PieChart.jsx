@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
-import { useDispatch, useSelector } from 'react-redux';
-import { getBusinessToday } from '../network/network';
-import { addBusiness } from '../Redux/TimeTrackerSlice';
+import { useSelector } from 'react-redux';
 
 const RADIAN = Math.PI / 180;
 
@@ -52,15 +50,14 @@ const renderCustomizedLabel = ({
 };
 
 export function GraphPieChart() {
-    const dispatch = useDispatch();
     const appData = useSelector((state) => state.timeTracker);
-
-    const data = appData.map((item) => {
+    const data = [];
+    appData.forEach((item) => {
         if (new Date(item.date).getDate() === new Date().getDate()) {
-            return {
+            data.push({
                 name: item.name,
                 value: +item.time,
-            };
+            });
         }
     });
     console.log(appData);
