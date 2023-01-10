@@ -1,6 +1,6 @@
 import './Graphs.css';
-import { GraphPieChart } from './PieChart';
 import { VerticalChart } from './VerticalChart';
+import { ShapePieChart } from './ShapePieChart';
 
 export function Graphs() {
     return (
@@ -9,7 +9,7 @@ export function Graphs() {
                 <h1>Graphs</h1>
                 <div className={'PieChart'}>
                     <p>Summary of the day</p>
-                    <GraphPieChart />
+                    <ShapePieChart />
                     <p>Summary for the week</p>
                     <VerticalChart />
                 </div>
