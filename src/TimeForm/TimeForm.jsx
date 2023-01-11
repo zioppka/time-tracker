@@ -83,10 +83,11 @@ export function TimeForm() {
                     />
                     <div className={'values'}>
                         <div className="range-value range-value-start">{0}</div>
-                        <div className="range-value">{time}</div>
                         <div className="range-value range-value-end">{24 - totalHoursToday}</div>
                     </div>
                 </div>
+                <div className="range-value range-value-center">{time}</div>
+
                 <p className={'warning'}>{warningMessage}</p>
                 <button className="time-btn">Send</button>
             </div>
