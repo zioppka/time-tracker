@@ -134,9 +134,9 @@
 
 .range-value {
     font-size: 50px;
+    padding-top: 5px;
     margin-bottom: 0;
     color: #4caf50;
-    padding-top: 5px;
 }
 
 .range-value-start {
