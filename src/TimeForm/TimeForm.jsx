@@ -29,8 +29,6 @@ export function TimeForm() {
             return;
         }
 
-        console.log(totalHoursToday);
-
         const data = {
             name: business,
             category: category,
@@ -52,6 +50,7 @@ export function TimeForm() {
             <div className={'container'}>
                 <input
                     type="text"
+                    maxLength={20}
                     className="time-input"
                     placeholder={'Business'}
                     tabIndex={1}
