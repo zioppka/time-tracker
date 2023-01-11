@@ -31,7 +31,7 @@ export const renderActiveShape = (props) => {
     return (
         <g>
             <text fontSize={25} x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-                {payload.name}
+                {payload.name === 'Пусто' ? '' : payload.name}
             </text>
             <Sector
                 cx={cx}
@@ -56,7 +56,7 @@ export const renderActiveShape = (props) => {
             <text
                 x={ex + (cos >= 0 ? 1 : -1) * 12}
                 y={ey}
-                dy={-16}
+                dy={-10}
                 textAnchor={textAnchor}
                 fill={fill}
             >
@@ -65,13 +65,14 @@ export const renderActiveShape = (props) => {
             <text
                 x={ex + (cos >= 0 ? 1 : -1) * 12}
                 y={ey}
+                dy={8}
                 textAnchor={textAnchor}
                 fill="#333"
             >{`${value} hours`}</text>
             <text
                 x={ex + (cos >= 0 ? 1 : -1) * 12}
                 y={ey}
-                dy={18}
+                dy={26}
                 textAnchor={textAnchor}
                 fill="#999"
             >

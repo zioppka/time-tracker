@@ -8,9 +8,9 @@ export function Graphs() {
             <div className={'container'}>
                 <h1>Graphs</h1>
                 <div className={'PieChart'}>
-                    <p>Summary of the day</p>
+                    <p className={'chart-info'}>Summary of the day</p>
                     <ShapePieChart />
-                    <p>Summary for the week</p>
+                    <p className={'chart-info'}>Summary for the week</p>
                     <VerticalChart />
                 </div>
             </div>

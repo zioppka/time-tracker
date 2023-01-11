@@ -10,6 +10,7 @@ export function ShapePieChart() {
     const [activeIndex, setActiveIndex] = useState(0);
     const colorMap = new Map();
     const data = [];
+    colorMap.set('Пусто', 'white');
 
     const onPieEnter = useCallback(
         (_, index) => {
@@ -34,10 +35,9 @@ export function ShapePieChart() {
     });
 
     data.forEach((item) => {
-        if (!colorMap.has(item.category)) {
+        if (!colorMap.has(item.category) && item.name !== 'Пусто') {
             colorMap.set(item.category, COLORS[colorMap.size % COLORS.length]);
         }
-        colorMap.set('Пусто', 'white');
     });
 
     let totalTime = 24;
@@ -51,7 +51,7 @@ export function ShapePieChart() {
     });
 
     return (
-        <PieChart width={900} height={600}>
+        <PieChart width={900} height={560}>
             <Pie
                 activeIndex={activeIndex}
                 activeShape={renderActiveShape}
