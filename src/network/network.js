@@ -8,6 +8,11 @@ export async function createBusiness(data) {
     });
 }
 export async function getBusinessToday() {
-    const resp = await fetch('http://localhost:3001/tracker');
+    const resp = await fetch('http://localhost:3001/tracker/day');
+    return resp.json();
+}
+
+export async function getBusinessWeek() {
+    const resp = await fetch('http://localhost:3001/tracker/week');
     return resp.json();
 }
