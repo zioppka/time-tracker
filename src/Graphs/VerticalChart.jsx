@@ -1,48 +1,10 @@
 import React from 'react';
 import { ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
-
-const data = [
-    {
-        name: 'Monday',
-        sleep: 8,
-        work: 8,
-        personal: 3,
-    },
-    {
-        name: 'Thursday',
-        sleep: 8,
-        work: 8,
-        personal: 2,
-    },
-    {
-        name: 'Wednesday',
-        sleep: 7,
-        work: 8,
-        personal: 3,
-    },
-    {
-        name: 'Friday',
-        sleep: 8,
-        work: 8,
-        personal: 4,
-    },
-    {
-        name: 'Saturday',
-        sleep: 9,
-        work: 0,
-        personal: 9,
-    },
-    {
-        name: 'Sunday',
-        sleep: 8,
-        work: 0,
-        personal: 8,
-    },
-];
-
-const nameDay = ['Sunday', 'Monday', 'Thursday', 'Wednesday', 'Friday', 'Saturday'];
+import { useSelector } from 'react-redux';
 
 export function VerticalChart() {
+    const data = useSelector((state) => state.week);
+
     return (
         <ComposedChart
             layout="vertical"

@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import TimeTrackerSlice from './TimeTrackerSlice';
+import TodaySlice from './TodaySlice';
+import WeekSlice from './WeekSlice';
 
 const rootReducer = combineReducers({
-    timeTracker: TimeTrackerSlice,
+    day: TodaySlice,
+    week: WeekSlice,
 });
 
 export const store = configureStore({
