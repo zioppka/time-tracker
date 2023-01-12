@@ -6,7 +6,7 @@ import { renderActiveShape } from './RenderActiveShape';
 const COLORS = ['#e74c3c', '#00ffce', '#FFBB28', '#beff00', '#3498fe'];
 
 export function ShapePieChart() {
-    const appData = useSelector((state) => state.timeTracker);
+    const appData = useSelector((state) => state.day);
     const [activeIndex, setActiveIndex] = useState(0);
     const colorMap = new Map();
     const data = [];

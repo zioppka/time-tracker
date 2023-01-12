@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const TimeTrackerSlice = createSlice({
+const TodaySlice = createSlice({
     name: 'TimeTracker',
     initialState: [],
     reducers: {
@@ -18,5 +18,5 @@ const TimeTrackerSlice = createSlice({
     },
 });
 
-export const { addBusiness } = TimeTrackerSlice.actions;
-export default TimeTrackerSlice.reducer;
+export const { addBusiness } = TodaySlice.actions;
+export default TodaySlice.reducer;

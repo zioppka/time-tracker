@@ -1,15 +1,16 @@
 import './TimeForm.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBusiness } from '../Redux/TimeTrackerSlice';
+import { addBusiness } from '../Redux/TodaySlice';
 import { createBusiness } from '../network/network';
+import { CategoryToggle } from './categoryToggle/CategoryToggle';
 
 export function TimeForm() {
     const [business, setBusiness] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('work');
     const [time, setTime] = useState(0);
     const [warningMessage, setWarningMessage] = useState('');
-    const appData = useSelector((state) => state.timeTracker);
+    const appData = useSelector((state) => state.day);
     const dispatch = useDispatch();
 
     let totalHoursToday = 0;
@@ -57,14 +58,7 @@ export function TimeForm() {
                     onChange={(e) => setBusiness(e.target.value)}
                     value={business}
                 />
-                <input
-                    type="text"
-                    className="time-input"
-                    placeholder={'Category'}
-                    tabIndex={2}
-                    onChange={(e) => setCategory(e.target.value)}
-                    value={category}
-                />
+                <CategoryToggle onChange={setCategory} active={category} />
                 <div className="time-range-input">
                     <label htmlFor={'sendForm'} className={'send-form'}>
                         How many time did it take
