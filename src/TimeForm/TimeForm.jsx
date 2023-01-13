@@ -1,7 +1,6 @@
 import './TimeForm.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBusiness } from '../Redux/TodaySlice';
 import { createBusiness } from '../network/network';
 import { CategoryToggle } from './categoryToggle/CategoryToggle';
 
@@ -20,11 +19,11 @@ export function TimeForm() {
 
     function newBusiness(e) {
         e.preventDefault();
+
         if (24 - totalHoursToday === 0) {
             setWarningMessage(`You don't have 24+ h in day`);
             return;
         }
-
         if (business === '' || time === 0 || category === '') {
             setWarningMessage('Enter fields');
             return;
@@ -37,9 +36,8 @@ export function TimeForm() {
             date: new Date(),
         };
 
-        dispatch(addBusiness(data));
+        dispatch(createBusiness(data));
 
-        createBusiness(data);
         setWarningMessage('');
         setBusiness('');
         setCategory('');
