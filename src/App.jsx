@@ -10,10 +10,11 @@ import { useEffect } from 'react';
 
 export default function App() {
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(getBusinessToday());
         dispatch(getBusinessWeek());
-    }, [dispatch]);
+    }, []);
 
     return (
         <div className={'App'}>

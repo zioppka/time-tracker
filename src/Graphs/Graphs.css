@@ -37,3 +37,32 @@
     font-size: 25px;
     color: #ffffff;
 }
+
+.view-btn {
+    background: #92cb7e;
+    border-radius: 10px;
+    border: none;
+    margin: 15px 30px 30px;
+    font-family: 'Comfortaa', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    padding: 10px 40px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px gray;
+}
+
+.view-btn:hover {
+    background: white;
+    color: black;
+    transform: scale(1.02);
+}
+
+.view-btn:active {
+    background-color: #528478;
+    box-shadow: 0 5px 10px gray;
+    transform: translateY(4px);
+}
