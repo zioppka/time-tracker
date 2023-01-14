@@ -6,7 +6,7 @@ import { CategoryToggle } from './categoryToggle/CategoryToggle';
 
 export function TimeForm() {
     const [business, setBusiness] = useState('');
-    const [category, setCategory] = useState('work');
+    const [category, setCategory] = useState('');
     const [time, setTime] = useState(0);
     const [warningMessage, setWarningMessage] = useState('');
     const appData = useSelector((state) => state.day);

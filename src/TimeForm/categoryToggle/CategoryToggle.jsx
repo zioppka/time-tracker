@@ -6,6 +6,17 @@ export function CategoryToggle({ onChange, active }) {
             <input
                 type="button"
                 className={
+                    active === 'study'
+                        ? 'category-toggle category-toggle__active'
+                        : 'category-toggle'
+                }
+                tabIndex={2}
+                onClick={() => onChange('study')}
+                value={'study'}
+            />
+            <input
+                type="button"
+                className={
                     active === 'work'
                         ? 'category-toggle category-toggle__active'
                         : 'category-toggle'
@@ -24,17 +35,6 @@ export function CategoryToggle({ onChange, active }) {
                 tabIndex={2}
                 onClick={() => onChange('personal')}
                 value={'personal'}
-            />
-            <input
-                type="button"
-                className={
-                    active === 'school'
-                        ? 'category-toggle category-toggle__active'
-                        : 'category-toggle'
-                }
-                tabIndex={2}
-                onClick={() => onChange('school')}
-                value={'school'}
             />
             <input
                 type="button"
