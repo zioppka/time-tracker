@@ -18,50 +18,45 @@ export function Advice() {
     });
 
     function findSleepAdvice() {
-        if (sleepHours / totalDays < 7) {
-            return `You average less than 7 hours of sleep, make more time for it. Your avg hours: ${
-                sleepHours / totalDays
-            }`;
+        const avgSleepHours = Math.round(sleepHours / totalDays);
+        if (avgSleepHours < 7) {
+            return `You average less than 7 hours of sleep, make more time for it. Your avg hours: ${avgSleepHours}`;
         }
-        if (sleepHours / totalDays > 10) {
-            return `You've been sleeping too much this week, slow down. Your avg hours: ${
-                sleepHours / totalDays
-            }`;
+        if (avgSleepHours > 10) {
+            return `You've been sleeping too much this week, slow down. Your avg hours: ${avgSleepHours}`;
         }
         if (workHours === 0) {
             return `You have no entries for this sleeping this week`;
         }
 
-        return `Good job, bratan! Your sleep avg hours: ${sleepHours / totalDays}`;
+        return `Good job, bratan! Your sleep avg hours: ${avgSleepHours}`;
     }
     function findWorkAdvice() {
-        if (workHours / totalDays > 8) {
-            return `You usually work more than 8 hours, no need to overwork. Your avg hours: ${
-                workHours / totalDays
-            }`;
+        const avgWorkHours = Math.round(workHours / totalDays);
+        if (avgWorkHours > 8) {
+            return `You usually work more than 8 hours, no need to overwork. Your avg hours: ${avgWorkHours}`;
         }
 
-        if (workHours / totalDays < 4) {
-            return `You need to work harder!. Your avg hours: ${workHours / totalDays}`;
+        if (avgWorkHours < 4) {
+            return `You need to work harder!. Your avg hours: ${avgWorkHours}`;
         }
 
         if (workHours === 0) {
             return `You have no entries for this working this week`;
         }
 
-        return `Good job, bratan! Your work avg hours: ${workHours / totalDays}`;
+        return `Good job, bratan! Your work avg hours: ${avgWorkHours}`;
     }
     function findPersonalAdvice() {
-        if (personalHours / totalDays < 3) {
-            return `You didn't have much time for fun. Your avg hours: ${
-                personalHours / totalDays
-            }`;
+        const avgPersonalHours = Math.round(personalHours / totalDays);
+        if (avgPersonalHours < 3) {
+            return `You didn't have much time for fun. Your avg hours: ${avgPersonalHours}`;
         }
         if (workHours === 0) {
             return `You have no entries for this personal this week`;
         }
 
-        return `Good job, bratan! Your personal avg hours: ${personalHours / totalDays}`;
+        return `Good job, bratan! Your personal avg hours: ${avgPersonalHours}`;
     }
 
     return (
