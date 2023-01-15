@@ -1,0 +1,55 @@
+.editor-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    transition: 1s all ease-in-out;
+}
+.editor-wrapper.open {
+    opacity: 1;
+}
+.editor-wrapper.close {
+    opacity: 0;
+    transform: translate(0%, -110%);
+}
+.editor {
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1000px;
+    height: 500px;
+    transition: 0.3s all ease-in-out;
+    background-color: white;
+}
+.editor.open {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+.editor.close {
+    opacity: 0;
+    transform: translate(-50%, -110%);
+}
+
+.view-btn-close {
+    background: rgba(255, 0, 0, 0.34);
+    border-radius: 10px;
+    border: none;
+    font-family: 'Comfortaa', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    padding: 10px 40px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px gray;
+}
+.view-btn-close:hover {
+    background: darkseagreen;
+    color: white;
+}

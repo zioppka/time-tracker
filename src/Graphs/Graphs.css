@@ -23,7 +23,7 @@
     font-size: 15px;
 }
 .PieChart div {
-    margin: 20px 0 40px;
+    padding: 20px 0 40px;
 }
 
 .customized-label {
@@ -42,7 +42,6 @@
     background: #92cb7e;
     border-radius: 10px;
     border: none;
-    margin: 15px 30px 30px;
     font-family: 'Comfortaa', cursive;
     font-style: normal;
     font-weight: 400;
@@ -62,7 +61,8 @@
 }
 
 .view-btn:active {
-    background-color: #528478;
+    background-color: blueviolet;
     box-shadow: 0 5px 10px gray;
+    color: greenyellow;
     transform: translateY(4px);
 }

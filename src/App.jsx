@@ -14,7 +14,7 @@ export default function App() {
     useEffect(() => {
         dispatch(getBusinessToday());
         dispatch(getBusinessWeek());
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className={'App'}>

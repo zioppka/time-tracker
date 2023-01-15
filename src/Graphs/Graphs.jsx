@@ -2,9 +2,17 @@ import './Graphs.css';
 import { VerticalChart } from './Charts/VerticalChart';
 import { ShapePieChart } from './Charts/ShapePieChart';
 import { Editor } from './Editor/Editor';
+import { useState } from 'react';
 
 export function Graphs() {
-    function openEditor() {}
+    const [showEditor, setShowEditor] = useState(false);
+    const openEditor = () => {
+        setShowEditor(true);
+    };
+
+    const closeEditor = () => {
+        setShowEditor(false);
+    };
 
     return (
         <div className={'graphs'}>
@@ -15,10 +23,12 @@ export function Graphs() {
                     <ShapePieChart />
                     <p className={'chart-info'}>Summary for the week</p>
                     <VerticalChart />
-                    <button className={'view-btn'} onClick={openEditor}>
-                        View data
-                    </button>
-                    <Editor />
+                    <div>
+                        <button className="view-btn" onClick={openEditor}>
+                            View data
+                        </button>
+                        <Editor closeEditor={closeEditor} status={showEditor} />
+                    </div>
                 </div>
             </div>
         </div>

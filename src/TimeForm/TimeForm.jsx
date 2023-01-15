@@ -1,7 +1,7 @@
 import './TimeForm.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createBusiness, getBusinessWeek } from '../network/network';
+import { createBusiness } from '../network/network';
 import { CategoryToggle } from './categoryToggle/CategoryToggle';
 
 export function TimeForm() {

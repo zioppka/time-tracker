@@ -38,7 +38,7 @@ export function Advice() {
         }
 
         if (avgWorkHours < 4) {
-            return `You need to work harder!. Your avg hours: ${avgWorkHours}`;
+            return `You need to work harder! Your avg hours: ${avgWorkHours}`;
         }
 
         if (workHours === 0) {
